@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem("isAuthenticated", "N");
+  }
   login() {
     const body = {
       username: this.userName,
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
       (result: any) => {
         debugger;
         console.log(result);
+        localStorage.setItem("isAuthenticated", "Y");
         let navigationExtras: NavigationExtras = {
           state: {
             isPrivileged: result.isPrivileged,
