@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "https://localhost:44321/",
+  baseUrl: "http://snahashis-001-site1.ftempurl.com/",
 };
