@@ -1,0 +1,12 @@
+.example-form {
+  min-width: 850px;
+  max-width: 1900px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

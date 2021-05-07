@@ -1,0 +1,31 @@
+<form class="example-form">
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>GOLD STORE</span>
+  </mat-toolbar>
+  <mat-form-field class="example-full-width">
+    <mat-label>User Name</mat-label>
+    <input matInput [(ngModel)]="userName" name="gp" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="passWord"
+      name="weight"
+      [type]="hide ? 'password' : 'text'"
+    />
+    <mat-icon matSuffix (click)="hide = !hide">{{
+      hide ? "visibility_off" : "visibility"
+    }}</mat-icon>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="login()">Login</button>
+</form>

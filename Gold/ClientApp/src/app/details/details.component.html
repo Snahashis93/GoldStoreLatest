@@ -1,0 +1,44 @@
+<form class="example-form">
+  <mat-toolbar>
+    <span>GOLD STORE</span>
+    <span class="example-spacer"></span>
+    <div>
+      <span *ngIf="isDiscountAvailable">Privileged user</span>
+      <span *ngIf="!isDiscountAvailable">Normal user</span>
+    </div>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="signOut()"
+    >
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Gold Price(Per Gram)</mat-label>
+    <input matInput [(ngModel)]="goldPrice" name="gp" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Weight(grams)</mat-label>
+    <input matInput [(ngModel)]="weight" name="weight" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Gold Price(Per Gram)</mat-label>
+    <input matInput [(ngModel)]="totalPrice" name="price" disabled />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" *ngIf="isDiscountAvailable">
+    <mat-label>Discount %</mat-label>
+    <input matInput [(ngModel)]="discount" name="discount" disabled />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="calculate()">
+    Calculate
+  </button>
+  <button mat-raised-button color="accent" (click)="printToFile()">
+    Print To File
+  </button>
+  <button mat-flat-button (click)="printToScreen()">Print To Screen</button>
+  <button mat-raised-button color="warn">Print To Paper</button>
+</form>
