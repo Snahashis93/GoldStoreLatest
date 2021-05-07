@@ -6,9 +6,6 @@
 
 Gold Store is mobile-ready, Angular and Asp.net Core powered website
 
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
 
 ## Login Credentials
 
