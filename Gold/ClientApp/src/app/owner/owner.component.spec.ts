@@ -17,6 +17,7 @@ import { NO_ERRORS_SCHEMA, Injectable } from "@angular/core";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { OwnerComponent } from "./owner.component";
+import { Router } from "@angular/router";
 @Injectable()
 class MockedClass {
   updateDiscount() {
@@ -74,5 +75,11 @@ describe("OwnerComponent", () => {
     );
     component.updateDiscount();
     expect(service.updateDiscount).toHaveBeenCalled();
+  });
+  it("should call signout", () => {
+    const routerstub: Router = TestBed.get(Router);
+    spyOn(routerstub, "navigate");
+    component.signOut();
+    expect(routerstub.navigate).toHaveBeenCalled();
   });
 });

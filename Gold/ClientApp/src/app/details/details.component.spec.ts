@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
 import { UserService } from "src/app/json.service";
 import { of, throwError } from "rxjs";
+import { Router } from "@angular/router";
 
 class MockedClass {
   getDiscount() {
@@ -139,5 +140,11 @@ describe("DetailsComponent", () => {
     expect(component.calculate).toHaveBeenCalled();
 
     expect(component.isClicked).toEqual(true);
+  });
+  it("should call signout", () => {
+    const routerstub: Router = TestBed.get(Router);
+    spyOn(routerstub, "navigate");
+    component.signOut();
+    expect(routerstub.navigate).toHaveBeenCalled();
   });
 });

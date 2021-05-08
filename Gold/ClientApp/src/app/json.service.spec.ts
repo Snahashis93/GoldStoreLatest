@@ -6,14 +6,13 @@ import { of } from "rxjs";
 import { TestBed } from "@angular/core/testing";
 import { UserService } from "./json.service";
 
-describe("RemoteService (fake call with Jasmine)", () => {
+describe("UserService", () => {
   let service: UserService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       // providers: [{ provide: RemoteService, useValue: jasmineSpy }]
-      providers: [UserService],
     });
 
     // inject the service
@@ -34,6 +33,31 @@ describe("RemoteService (fake call with Jasmine)", () => {
     // act
     service.login(body).subscribe((data: any) => {
       expect(data.isPrivileged).toBe(true);
+    });
+
+    // assert
+    expect(spy).toHaveBeenCalled();
+  });
+  it("should return the mocked data in the subscribe", () => {
+    const spy = spyOn(service, "updateDiscount").and.returnValue(of({}));
+    const body = { discountPercentage: 6 };
+
+    // act
+    service.updateDiscount(body).subscribe((data: any) => {
+      // expect(data.discountPercentage).toBe(true);
+    });
+
+    // assert
+    expect(spy).toHaveBeenCalled();
+  });
+  it("should return the mocked data in the subscribe", () => {
+    const spy = spyOn(service, "getDiscount").and.returnValue(
+      of({ discountPercentage: 6 })
+    );
+    const body = { discountPercentage: 6 };
+    // act
+    service.getDiscount().subscribe((data: any) => {
+      expect(data.discountPercentage).toBe(6);
     });
 
     // assert
