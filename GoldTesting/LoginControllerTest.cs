@@ -5,15 +5,19 @@ using Gold;
 using Gold.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace GoldTesting
 {
     public class LoginControllerTest
     {
+        private DbContextOptions<ApiContext> dbContextOptions = new DbContextOptionsBuilder<ApiContext>()
+            .UseInMemoryDatabase(databaseName: "PrimeDb")
+            .Options;
         [Fact]
         public void PrivilegedUser()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new ApiContext(dbContextOptions));
             User user = new User { Username = "Privileged", Password = "test" };
             var result = controller.Authenticate(user);
             var okResult = Assert.IsType<OkObjectResult>(result);
@@ -23,7 +27,8 @@ namespace GoldTesting
         [Fact]
         public void RegularUser()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new ApiContext(dbContextOptions));
+
             User user = new User { Username = "Regular", Password = "test" };
             var result = controller.Authenticate(user);
             var okResult = Assert.IsType<OkObjectResult>(result);
@@ -33,7 +38,8 @@ namespace GoldTesting
         [Fact]
         public void UnAuthorizedUser()
         {
-            var controller = new LoginController();
+            var controller = new LoginController(new ApiContext(dbContextOptions));
+
             User user = new User { Username = "Unauthorized", Password = "Unauthorized" };
             var result = controller.Authenticate(user);
             var okResult = Assert.IsType<BadRequestObjectResult>(result);

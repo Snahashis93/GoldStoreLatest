@@ -12,29 +12,48 @@ namespace Gold.Controllers
     [ApiController]
     public class OwnerController : ControllerBase
     {
-        private static Discount _discount = new Discount { DiscountPercentage = 2 };
-    
-        
+        private readonly ApiContext apiContext;
+
+        //private static Discount _discount = new Discount { DiscountPercentage = 2 };
+
+        public OwnerController(ApiContext apiContext)
+        {
+            this.apiContext = apiContext;
+        }
         // POST api/<OwnerController>
         [HttpPost("updateDiscount")]
         public IActionResult UpdateDiscount(Discount discount)
+
         {
-            if(ModelState.IsValid)
-            {
-                _discount.DiscountPercentage = discount.DiscountPercentage;
+            //try
+            //{
+            //return Ok(discount);
+            //var _discount = apiContext.GetDiscount();
+            //_discount.DiscountPercentage = discount.DiscountPercentage;
+            var _discount = apiContext.GetDiscount();
+            //_discount.DiscountPercentage = discount.DiscountPercentage;
+            //var entry = apiContext.Discount.First(e => e.discountId == discount.discountId);
+           // var entry = apiContext.Discount.First(e => e.discountId == discount.discountId);
+
+            apiContext.Entry(_discount).CurrentValues.SetValues(discount);
+           // apiContext.Discount.Update(discount);
+                apiContext.SaveChanges();
+                //var _discount = apiContext.GetDiscount();
+                //return Ok(x);
                 return Ok();
-            }
-            else
-            {
-                return BadRequest(new { message = "Could not update discount" });
-            }
+            //}
+            //catch
+            //{
+            //    return BadRequest(new { message = "Could not update discount" });
+            //}
         }
         [HttpGet("getDiscount")]
         public IActionResult GetDiscount()
         {
             try
             {
-                return Ok(_discount);
+                var discount = apiContext.GetDiscount();
+                return Ok(discount);
 
             }
             catch

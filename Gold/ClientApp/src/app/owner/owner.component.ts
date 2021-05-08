@@ -28,6 +28,7 @@ export class OwnerComponent implements OnInit {
   }
   updateDiscount() {
     const body = {
+      discountId  : 1,
       discountPercentage: parseInt(this.discount),
     };
     this.userService.updateDiscount(body).subscribe(

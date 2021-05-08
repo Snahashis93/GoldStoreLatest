@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Gold.Controllers;
 
 namespace Gold
 {
@@ -20,6 +22,8 @@ namespace Gold
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase(databaseName: "Users").UseInMemoryDatabase(databaseName: "Users"));
+            services.AddScoped<ApiContext>();
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(

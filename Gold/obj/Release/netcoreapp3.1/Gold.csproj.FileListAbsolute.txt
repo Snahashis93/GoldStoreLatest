@@ -12,6 +12,10 @@ C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Gold.Vie
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.NodeServices.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.Extensions.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
@@ -28,11 +32,11 @@ C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsof
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.AssemblyInfoInputs.cache
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.AssemblyInfo.cs
-C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.csproj.CoreCompileInputs.cache
-C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.RazorAssemblyInfo.cache
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.RazorAssemblyInfo.cs
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.TagHelpers.input.cache
@@ -49,3 +53,8 @@ C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\staticwe
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.pdb
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.genruntimeconfig.cache
+C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.csprojAssemblyReference.cache
+C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.csproj.CoreCompileInputs.cache
+C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.MvcApplicationPartsAssemblyInfo.cache

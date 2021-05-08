@@ -7,6 +7,7 @@ namespace Gold
 {
     public class Discount
     {
+        public int discountId { get; set; }
         public int DiscountPercentage { get; set; }
 
     }
