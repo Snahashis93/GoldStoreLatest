@@ -13,7 +13,6 @@ namespace Gold.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        //private readonly ILogger<LoginController> _logger;
         private List<User> _users = new List<User>
         {
             new User { Id = 1, Username = "Regular", Password = "test",Role="Regular" },
@@ -22,10 +21,7 @@ namespace Gold.Controllers
 
         };
 
-        //public LoginController(ILogger<LoginController> logger)
-        //{
-        //    _logger = logger;
-        //}
+     
         [HttpPost("authenticate")]
         public IActionResult Authenticate(User model)
         {
@@ -66,17 +62,6 @@ namespace Gold.Controllers
 
         
         }
-        //[HttpGet]
-        //public IEnumerable<User> Get()
-        //{
-        //    var rng = new Random();
-        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    {
-        //        Date = DateTime.Now.AddDays(index),
-        //        TemperatureC = rng.Next(-20, 55),
-        //        Summary = Summaries[rng.Next(Summaries.Length)]
-        //    })
-        //    .ToArray();
-        //}
+       
     }
 }

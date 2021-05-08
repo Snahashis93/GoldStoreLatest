@@ -28,7 +28,6 @@ C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsof
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Snahashis\Documents\GitHub\test\Gold\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.csprojAssemblyReference.cache
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.AssemblyInfoInputs.cache
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.AssemblyInfo.cs
 C:\Users\Snahashis\Documents\GitHub\test\Gold\obj\Release\netcoreapp3.1\Gold.csproj.CoreCompileInputs.cache
