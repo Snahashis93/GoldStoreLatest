@@ -14,6 +14,7 @@ Access GoldStore [here](http://snahashis-001-site1.ftempurl.com/).
 Use Credentials listed below
 - UserName:Privileged..PassWord:test
 - UserName:Regular..PassWord:test
+- UserName:Owner..PassWord:test
 
 ## Meet some of my works
 - [My PortFolio](https://portfolio-snahashis.web.app/#/) 
