@@ -4,11 +4,14 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Gold Store is mobile-ready, Angular and Asp.net Core powered website
+Gold Store is mobile-ready, Angular and Asp.net Core powered website.
+
 
 
 ## Login Credentials
+Access GoldStore [here](http://snahashis-001-site1.ftempurl.com/).
 
+Use Credentials listed below
 - UserName:Privileged..PassWord:test
 - UserName:Regular..PassWord:test
 
