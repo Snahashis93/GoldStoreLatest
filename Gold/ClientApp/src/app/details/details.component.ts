@@ -53,6 +53,9 @@ export class DetailsComponent implements OnInit {
       this.totalPrice -= discount;
     }
   }
+  printToPaper(): never {
+    throw new Error("not Implemented");
+  }
   signOut() {
     this.router.navigate(["/"]);
   }
