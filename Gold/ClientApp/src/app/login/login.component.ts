@@ -40,12 +40,16 @@ export class LoginComponent implements OnInit {
         debugger;
         console.log(result);
         localStorage.setItem("isAuthenticated", "Y");
-        let navigationExtras: NavigationExtras = {
-          state: {
-            isPrivileged: result.isPrivileged,
-          },
-        };
-        this.router.navigate(["/details"], navigationExtras);
+        if (result.role == "Owner") {
+          this.router.navigate(["/owner"]);
+        } else {
+          let navigationExtras: NavigationExtras = {
+            state: {
+              isPrivileged: result.isPrivileged,
+            },
+          };
+          this.router.navigate(["/details"], navigationExtras);
+        }
       },
       (error) => {
         this.errorMessage = error.error.message;

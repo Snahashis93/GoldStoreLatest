@@ -1,0 +1,24 @@
+<form class="example-form">
+  <mat-toolbar>
+    <span>GOLD STORE</span>
+    <span class="example-spacer"></span>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="signOut()"
+    >
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Discount</mat-label>
+    <input matInput [(ngModel)]="discount" name="gp" />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="updateDiscount()">
+    Update Discount
+  </button>
+</form>

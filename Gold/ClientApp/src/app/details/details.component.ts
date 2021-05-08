@@ -5,6 +5,7 @@ import {
   MatSnackBarVerticalPosition,
 } from "@angular/material/snack-bar";
 import { Router, NavigationExtras } from "@angular/router";
+import { UserService } from "../json.service";
 
 @Component({
   selector: "app-details",
@@ -16,19 +17,32 @@ export class DetailsComponent implements OnInit {
   weight: any;
   totalPrice: any;
   x: boolean = true;
-  discount: any = 2;
+  discount: any;
   isDiscountAvailable: boolean;
   isClicked: boolean = false;
   message: string;
   horizontalPosition: MatSnackBarHorizontalPosition = "start";
   verticalPosition: MatSnackBarVerticalPosition = "top";
-  constructor(private _snackBar: MatSnackBar, private router: Router) {}
+
+  constructor(
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     /* istanbul ignore else*/
     if (this.x && history.state.isPrivileged) {
       this.isDiscountAvailable = history.state.isPrivileged;
     }
+    this.userService.getDiscount().subscribe(
+      (result: any) => {
+        this.discount = result.discountPercentage;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
   calculate() {
     this.totalPrice = this.goldPrice * this.weight;

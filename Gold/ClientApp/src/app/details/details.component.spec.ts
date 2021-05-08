@@ -11,13 +11,25 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
+import { UserService } from "src/app/json.service";
+import { of, throwError } from "rxjs";
+
+class MockedClass {
+  getDiscount() {
+    const x = { discountPercentage: 6 };
+    return of(x);
+  }
+}
 describe("DetailsComponent", () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
+  let service;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DetailsComponent],
+      providers: [{ provide: UserService, useClass: MockedClass }],
+
       imports: [
         FormsModule,
         BrowserAnimationsModule,
@@ -39,6 +51,8 @@ describe("DetailsComponent", () => {
     // spyOnProperty(history.state, 'length', 'get').and.returnValue(1);
 
     component = fixture.componentInstance;
+    service = TestBed.get(UserService);
+
     component.x = false;
 
     // let history = {
@@ -51,6 +65,8 @@ describe("DetailsComponent", () => {
   });
 
   it("should create", () => {
+    const x = { discountPercentage: 6 };
+    spyOn(service, "getDiscount").and.returnValue(of(x));
     // let x={
     //   isPrivileged: true,
     // }
@@ -70,6 +86,22 @@ describe("DetailsComponent", () => {
 
     expect(component).toBeTruthy();
   });
+  it("should call getDiscount success ", () => {
+    const x = { discountPercentage: 8 };
+    spyOn(service, "getDiscount").and.returnValue(of(x));
+    component.ngOnInit();
+    expect(service.getDiscount).toHaveBeenCalled();
+    expect(component.discount).toEqual(8);
+  });
+  it("should call getDiscount failure", () => {
+    const x = { discountPercentage: 8 };
+    spyOn(service, "getDiscount").and.returnValue(
+      throwError({ status: 404, error: "nn" })
+    );
+    component.ngOnInit();
+    expect(service.getDiscount).toHaveBeenCalled();
+  });
+
   it("should calculate total based on  discount ", () => {
     debugger;
     spyOnProperty(window.history, "state", "get").and.returnValue({

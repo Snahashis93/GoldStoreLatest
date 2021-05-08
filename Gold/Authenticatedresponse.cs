@@ -8,6 +8,7 @@ namespace Gold
     public class Authenticatedresponse
     {
         public bool IsPrivileged { get; set; }
+        public string Role { get; set; }
 
     }
 }

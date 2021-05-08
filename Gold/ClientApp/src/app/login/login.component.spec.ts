@@ -63,22 +63,12 @@ describe("LoginComponent", () => {
     expect(component).toBeTruthy();
   });
   it("should call login() ", () => {
-    const todos = [
-      { id: 1, title: "a" },
-      { id: 2, title: "b" },
-      { id: 3, title: "c" },
-    ];
     const x = { isPrivileged: true };
     spyOn(service, "login").and.returnValue(of(x));
     component.login();
     expect(service.login).toHaveBeenCalled();
   });
   it("should call login() failure ", () => {
-    const todos = [
-      { id: 1, title: "a" },
-      { id: 2, title: "b" },
-      { id: 3, title: "c" },
-    ];
     const x = { isPrivileged: true };
     spyOn(service, "login").and.returnValue(
       throwError({ status: 404, error: "nn" })

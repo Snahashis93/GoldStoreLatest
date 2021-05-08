@@ -8,6 +8,8 @@ import { AppComponent } from "./app.component";
 
 import { LoginComponent } from "./login/login.component";
 import { DetailsComponent } from "./details/details.component";
+import { OwnerComponent } from "./owner/owner.component";
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
@@ -18,7 +20,12 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { AuthGuard } from "./auth.guard";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DetailsComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    DetailsComponent,
+    OwnerComponent,
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,
@@ -34,6 +41,11 @@ import { AuthGuard } from "./auth.guard";
       {
         path: "details",
         component: DetailsComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: "owner",
+        component: OwnerComponent,
         canActivate: [AuthGuard],
       },
     ]),

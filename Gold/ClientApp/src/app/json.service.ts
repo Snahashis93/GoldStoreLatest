@@ -13,6 +13,12 @@ export class UserService {
   login(body) {
     return this.http.post(this.baseurl + "login/authenticate", body);
   }
+  updateDiscount(body) {
+    return this.http.post(this.baseurl + "owner/updateDiscount", body);
+  }
+  getDiscount() {
+    return this.http.get(this.baseurl + "owner/getDiscount");
+  }
 
   // getTodos() {
   //   return this.http.get("...").pipe(map((r) => [JSON.stringify(r)]));

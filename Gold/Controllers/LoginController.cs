@@ -17,7 +17,9 @@ namespace Gold.Controllers
         private List<User> _users = new List<User>
         {
             new User { Id = 1, Username = "Regular", Password = "test",Role="Regular" },
-            new User { Id = 1, Username = "Privileged", Password = "test",Role="Privileged" }
+            new User { Id = 2, Username = "Privileged", Password = "test",Role="Privileged" },
+            new User { Id = 3, Username = "Owner", Password = "test",Role="Owner" }
+
         };
 
         //public LoginController(ILogger<LoginController> logger)
@@ -37,13 +39,23 @@ namespace Gold.Controllers
             {
                 var response= new Authenticatedresponse
                 {
-                    IsPrivileged = false
+                    IsPrivileged = false,
+                    Role= "Regular"
                 }; ;
                 if(user.Role == "Privileged")
                 {
                      response = new Authenticatedresponse
                     {
-                        IsPrivileged = true
+                        IsPrivileged = true,
+                        Role= "Privileged"
+                     };
+                }
+                if (user.Role == "Owner")
+                {
+                    response = new Authenticatedresponse
+                    {
+                        IsPrivileged = true,
+                        Role = "Owner"
                     };
                 }
                 return Ok(response);
